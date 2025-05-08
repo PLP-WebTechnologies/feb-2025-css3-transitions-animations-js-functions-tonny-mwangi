@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced JavaScript</title>
+    <style>
+        /* CSS Animations */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Button Styles */
+        .animated-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .animated-button:hover {
+            background-color: #45a049;
+            animation: bounce 1s;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            animation: fadeIn 0.5s;
+        }
+
+        .modal.active {
+            display: block;
+        }
+
+        /* Theme Styles */
+        body.light-theme {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        body.dark-theme {
+            background-color: #333;
+            color: #f9f9f9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .animated-button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body class="light-theme">
+    <h1>Interactive Web Page</h1>
+    <button class="animated-button" id="actionButton">Click Me</button>
+    <button class="animated-button" id="themeToggle">Toggle Theme</button>
+    <button class="animated-button" id="showModal">Show Modal</button>
+    <div class="modal" id="modal">
+        <p>This is a modal popup!</p>
+        <button class="animated-button" id="closeModal">Close</button>
+    </div>
+    <p>Click Count: <span id="clickCount">0</span></p>
+    <form id="userForm">
+        <label for="username">Enter your name:</label>
+        <input type="text" id="username" name="username" required>
+        <button type="submit" class="animated-button">Save Name</button>
+    </form>
+    <p id="greeting"></p>
+    <script src="script.js"></script>
+</body>
+</html>
